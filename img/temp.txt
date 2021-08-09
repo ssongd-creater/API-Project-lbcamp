@@ -1,0 +1,24 @@
+1.style Guide
+- main color : #547c61;
+- main font-family : "Roboto","Noto Sans KR", "sans-serif"
+
+2. 주요 기능
+- 현재 위치 반경 일정 범위의 캠핑장 검색(10 ~ 50km)
+- 주요 캠핑장 키워드로 검색
+- 검색 결과 지도에 마커로 표시 및 지도 표시
+
+3. 사용 API
+- 한국관광공사_고캠핑정보 조회 서비스(공공데이터포털)
+- gelocation API
+- google map API
+
+4. Plugin
+- owl carousel
+
+5. 개발 중 문제 이슈
+- 오픈 데이터 수신 오류
+- 지도 표시 멀티 타겟 마커 적용
+- 상세 데이터 접근키 제공 안함
+
+6. 인증키
+- B3xAD2Ck93FPbCmJPTuhYuSOZLrtbLBz0hZ5w5JVvwq7wAZP2jpuRIYQUkFrcRExXxZlp%2BQWeN5nObGl3RMvTg%3D%3D
