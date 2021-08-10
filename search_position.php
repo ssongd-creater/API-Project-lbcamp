@@ -23,26 +23,25 @@
 <body>
   
   <div class="wrap">
-    <!-- Main Background Image -->
-    <img src="/lbcamp/img/gocamp_bg.png" alt="" class="bg">
     <!-- Heaader -->
     <?php include $_SERVER["DOCUMENT_ROOT"]."/lbcamp/include/header.php";?>
 
+    <!-- Map box -->
+    <div class="map_img" id="map">
+      <img src="img/gocamp_map.jpg" alt="">
+    </div>
     <!-- Search and Select Bar -->
-    <div class="contents_bar">
+    <div class="contents_bar search_position">
       <div class="center">
-        <div class="search_bar">
-          <input type="text" placeholder="검색할 키워드를 입력해 주세요">
-          <button><img src="/lbcamp/img/gocamp_icon.png" alt=""></button>
-        </div>
+        
         <div class="drop_bar">
           <div class="dropdown">
             <div class="select">
-              <span>내 주변 캠핑장 검색</span>
+              <span id="query_val">내 주변 캠핑장 검색</span>
               <i class="fa fa-chevron-down"></i>
             </div>
             <ul class="dropdown_menu">
-              <li><a href="/lbcamp/search_position.php?radi=10000">반경 10KM 검색</a></li>
+               <li><a href="/lbcamp/search_position.php?radi=10000">반경 10KM 검색</a></li>
               <li><a href="/lbcamp/search_position.php?radi=20000">반경 20KM 검색</a></li>
               <li><a href="/lbcamp/search_position.php?radi=30000">반경 30KM 검색</a></li>
               <li><a href="/lbcamp/search_position.php?radi=40000">반경 40KM 검색</a></li>
@@ -52,10 +51,18 @@
         </div>
       </div>
     </div>
+    <!-- End of Contents_bar -->
+    <div class="bt_box">
+      <span><i class="fa fa-chevron-up"></i></span>
+      <div class="bt_sl carousel_section"></div>
+    </div>
   </div>
 
   <!-- Jquery Framework Load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- 구글맵 띄우는 script -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwYsGcvQsEIdtMCUJdOAa7l4lzTt4qg-4&region=kr"></script>
+
   <script src="/lbcamp/js/main.js"></script>
   <!-- <script src="/lbcamp/js/current_position.js"></script> -->
 </body>
