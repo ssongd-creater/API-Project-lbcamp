@@ -13,6 +13,8 @@
   <!-- Font Awesome Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <!-- Owl Carousel Style Link -->
+  <link rel="stylesheet" href="/lbcamp/css/owl.carousel.css">
   <!-- Main Style Sheet Link -->
   <link rel="stylesheet" href="/lbcamp/css/style.css">
   <!-- Animation Style Sheet Link -->
@@ -54,7 +56,32 @@
     <!-- End of Contents_bar -->
     <div class="bt_box">
       <span><i class="fa fa-chevron-up"></i></span>
-      <div class="bt_sl carousel_section"></div>
+      <div class="bt_sl carousel_section">
+        <div class="carousel_container">
+          <div class="owl-carousel owl-theme" id="contents_box">
+
+            <!-- <div class="carousel_item">
+              <div class="item_card">
+                <div class="sl_img">
+                  <img src="img/ex.jpg" alt="">
+                </div>
+                <div class="sl_txt">
+                  <h2>청계산 캠핑장</h2>
+                  <p>청계산에서 멀지않게 있는 캠핑장입니다 어서...</p>
+                </div>
+                <div class="sl_icons">
+                  <img src="img/ico_mart.png" alt="">
+                  <em>운동시설, 샤워장</em>
+                </div>
+              </div>
+            </div> -->
+            <!-- End of carousel_item -- Looping item -->
+
+            </div>
+          <!-- End of owl-carousel -- wrap all slide items -->
+        </div>
+        <!-- End of Crousel_container -->
+      </div>
     </div>
   </div>
 
@@ -64,6 +91,7 @@
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwYsGcvQsEIdtMCUJdOAa7l4lzTt4qg-4&region=kr"></script>
 
   <script src="/lbcamp/js/main.js"></script>
-  <!-- <script src="/lbcamp/js/current_position.js"></script> -->
+  <script src="/lbcamp/js/owl.carousel.js"></script>
+  <script src="/lbcamp/js/current_position.js"></script>
 </body>
 </html>
