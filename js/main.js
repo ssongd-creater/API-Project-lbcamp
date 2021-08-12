@@ -4,6 +4,12 @@ $(function () {
   $(".btn").click(function () {
     $(this).toggleClass('active');
     $(this).toggleClass('not-active');
+
+    if ($(this).hasClass('active')) {
+      $(".menu").slideDown(200);
+    } else {
+      $(".menu").slideUp(200);
+    }
   });
 
   //search select button  active
