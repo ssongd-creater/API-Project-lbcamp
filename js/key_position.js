@@ -13,33 +13,33 @@ $.ajax({
     let currentItems = "";
     console.log(Array.isArray(item));//item을 찍으면 10개의 배열이나온다, Array.isArray를 사용해주면 array인지아닌지(1개인지 여러개인지) 판별하여 true(여러개),false(1개)를 보여줌
 
-    function itemDOM() {
-      
+    function itemDOM(el) {
+      currentItems = `
+          <div class="carousel_item">
+            <div class="item_card">
+            <a href="/lbcamp/detail_position.php?lon=${el.mapX}&lat=${el.mapY}">
+              <div class="sl_img">
+                <img src="${el.firstImageUrl}" alt="" onerror="this.src='/lbcamp/img/no_image.png'">
+              </div>
+            </a>
+              <div class="sl_txt">
+                <h2>${el.facltNm}</h2>
+                <p>${el.addr1}</p>
+              </div>
+              <div class="sl_icons">
+                <img src="img/ico_mart.png" alt="">
+                <em>${el.sbrsCl}</em>
+              </div>
+            </div>
+          </div>
+        `;
+      contentsBox.innerHTML += currentItems; //+=을 안하면 마지막 값만 들어옴
     }
 
     if (Array.isArray(item)) {
       item.forEach(function (data) {
         //console.log(data);//반복문으로 10개의 배열을 하나씩 나눠서 확인할 수 있다. 값이 1개인 데이터는 오류가 남(반복되지 않으니까!)
-        currentItems = `
-          <div class="carousel_item">
-            <div class="item_card">
-            <a href="/lbcamp/detail_position.php?lon=${data.mapX}&lat=${data.mapY}">
-              <div class="sl_img">
-                <img src="${data.firstImageUrl}" alt="" onerror="this.src='/lbcamp/img/no_image.png'">
-              </div>
-            </a>
-              <div class="sl_txt">
-                <h2>${data.facltNm}</h2>
-                <p>${data.addr1}</p>
-              </div>
-              <div class="sl_icons">
-                <img src="img/ico_mart.png" alt="">
-                <em>${data.sbrsCl}</em>
-              </div>
-            </div>
-          </div>
-        `;
-        contentsBox.innerHTML += currentItems; //+=을 안하면 마지막 값만 들어옴
+        itemDOM(data);
         //google Map Logics here
         // script.js
         var map;
@@ -62,26 +62,7 @@ $.ajax({
         initMap();
       });
     } else {
-      currentItems = `
-          <div class="carousel_item">
-            <div class="item_card">
-            <a href="/lbcamp/detail_position.php?lon=${item.mapX}&lat=${item.mapY}">
-              <div class="sl_img">
-                <img src="${item.firstImageUrl}" alt="" onerror="this.src='/lbcamp/img/no_image.png'">
-              </div>
-            </a>
-              <div class="sl_txt">
-                <h2>${item.facltNm}</h2>
-                <p>${item.addr1}</p>
-              </div>
-              <div class="sl_icons">
-                <img src="img/ico_mart.png" alt="">
-                <em>${item.sbrsCl}</em>
-              </div>
-            </div>
-          </div>
-        `;
-      contentsBox.innerHTML += currentItems;
+      itemDOM(item);
       //console.log(item); //1개의 값도 보여짐
 
       function initMap() {

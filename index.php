@@ -53,8 +53,13 @@
       </div>
     </div>
   </div>
+  <?php
+    $cookie_name = "start";
+    $cookie_value = "started";
 
-  <div id="landing" class="start">
+    setcookie($cookie_name,$cookie_value,time() + 600,"/") //(쿠키네임, 쿠키값,시간(타임스탬프),경로) 30초동안은 start라는 쿠키가 실행됨 600은 10분
+  ?>
+  <div id="landing" class="<?php if(!isset($_COOKIE[$cookie_name])){echo "start";}else{echo "started";} ?>">
     <div class="landing_logo">
       <img src="/lbcamp/img/gocamp_logo.png" alt="">
     </div>
@@ -70,6 +75,27 @@
       const key_val = document.querySelector('.search_bar input').value;
       location.href=`/lbcamp/key_position.php?key_val=${key_val}`;
     });
+
+
+  
+    //쿠키값을 생성하는 기능 - safari에서는 실행이 되지 않음
+    // function setCookie(value,min){
+    //   const exdate = new Date(); //만료가됐을 때 제어하려함, 현재 날짜 객체 호출하는 함수
+    //   exdate.setMinutes(exdate.getMinutes() + 3) //날짜 정보 중 몇분인지 정보만 호출 +3 은 3분동안 지속이 됨
+    //   const cookie_value = escape(value) + ((min == null) ? '':'; expires=' + exdate.toUTCString()); //a?b:c a가 ture면 b가 실행되고 false면 c가 실행됨 = 삼항연산자 / expires 만료시간 , toUTCString 지역
+    //   document.cookie = cookie_value;
+    // }
+
+    // const isStart = document.cookie;
+    // window.onload = function(){
+    //   if(isStart == ""){
+        
+    //   }else{
+
+    //   }
+    //   setCookie('start',1);
+    // } 
+    
   </script>
 </body>
 </html>

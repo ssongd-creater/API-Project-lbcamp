@@ -30,7 +30,7 @@
 
     <!-- Map box -->
     <div class="map_img" id="map">
-      <img src="img/gocamp_map.jpg" alt="">
+      <!-- <img src="img/gocamp_map.jpg" alt=""> -->
     </div>
     <!-- Search and Select Bar -->
     <div class="contents_bar search_position">
